@@ -68,7 +68,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new SkeletonWebpackPlugin({
       webpackConfig: {
         entry: {
-          app: resolve('../src/entry-skeleton.js')
+          app: resolve('../src/skeleton/entry-skeleton.js')
         }
       },
       quiet: true,
