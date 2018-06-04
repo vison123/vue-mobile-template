@@ -1,48 +1,24 @@
 <template>
-    <header id='head_top'>
-        <slot name='logo'></slot>
-        <slot name='search'></slot>
-        <section class="head_goback" v-if="goBack" @click="$router.go(-1)">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:2"/>
-            </svg>
-        </section>
-        <router-link :to="userInfo? '/profile':'/login'" v-if='signinUp' class="head_login">
-            <svg class="user_avatar" v-if="userInfo">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
-            </svg>
-            <span class="login_span" v-else>登录|注册</span>
-        </router-link>
-        <section class="title_head ellipsis" v-if="headTitle">
-            <span class="title_text">{{headTitle}}</span>
-        </section>
-        <slot name="edit"></slot>
-        <slot name="msite-title"></slot>
-        <slot name="changecity"></slot>
-        <slot name="changeLogin"></slot>
+    <header class='head-wrapper'>
+      <div class="head-left" v-if="goBack" @click="$router.go(-1)">
+        <img class="left-arrow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIzMiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE2LjU1MiA1LjYzM0wxNC41MDggMy41OSAyLjI0MyAxNS44NTMgMTQuNTA4IDI4LjQxbDIuMDQ0LTIuMDQzLTEwLjIyLTEwLjUxM3oiLz48L3N2Zz4=" />
+      </div>
+      <span class="head-center">{{headTitle}}</span>
+      <slot name="option"></slot>
     </header>
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
 export default {
   data () {
     return {}
   },
   mounted () {
-    // 获取用户信息
-    this.getUserInfo()
   },
-  props: ['signinUp', 'headTitle', 'goBack'],
+  props: ['headTitle', 'goBack', 'rightText'],
   computed: {
-    ...mapState([
-      'userInfo'
-    ])
   },
   methods: {
-    ...mapActions([
-      'getUserInfo'
-    ])
   }
 }
 </script>
@@ -50,41 +26,36 @@ export default {
 <style lang="less" scoped>
     @import '../../assets/style/mixin';
 
-    #head_top{
-        background-color: @blue;
-        position: fixed;
+    .head-wrapper{
+        background-image: linear-gradient(90deg,#0af,#0085ff);
         z-index: 100;
-        left: 0;
-        top: 0;
         .wh(100%, 1.95rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-    .head_goback{
-        left: 0.4rem;
-        .wh(0.6rem, 1rem);
-        line-height: 2.2rem;
-        margin-left: .4rem;
+    .head-left{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .wh(2rem, 100%)
     }
-    .head_login{
-        right: 0.55rem;
-        .sc(0.65rem, #fff);
-        .ct;
-        .login_span{
-            color: #fff;
-        }
-        .user_avatar{
-            fill: #fff;
-            .wh(.8rem, .8rem);
-        }
+    .left-arrow{
+      width: 0.55rem;
     }
-    .title_head{
-        .center;
-        width: 50%;
-        color: #fff;
-        text-align: center;
-        .title_text{
-            .sc(0.8rem, #fff);
-            text-align: center;
-            font-weight: bold;
-        }
+    .head-center{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      max-width: 50%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 700;
+      transform: translateX(-50%);
+      .sc(0.8rem, #fff);
+      height: 1.95rem;
+      line-height: 1.95rem;
     }
 </style>

@@ -30,3 +30,7 @@ npm test
 ## App Skeleton
 
 使用 vue-skeleton-webpack-plugin 在构建时 Vue 预渲染骨架屏
+
+## 组件懒加载
+
+const Home = () => import('@/pages/home/home')

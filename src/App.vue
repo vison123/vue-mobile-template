@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <transition name="router-fade" mode="out-in">
       <keep-alive v-if="$route.meta.keepAlive">
         <router-view></router-view>
@@ -23,5 +23,11 @@ export default {
 
   .router-fade-enter, .router-fade-leave-active {
     opacity: 0;
+  }
+
+  .app{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 </style>

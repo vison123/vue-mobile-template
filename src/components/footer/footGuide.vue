@@ -1,5 +1,5 @@
 <template>
-  <section id='foot_guide'>
+  <footer id='foot_guide'>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
          style="position:absolute;width:0;height:0">
       <defs>
@@ -148,14 +148,14 @@
 
       </defs>
     </svg>
-    <section @click="gotoAddress({path: '/home', query: {geohash}})" class="guide_item">
+    <section @click="gotoAddress({path: '/home'})" class="guide_item">
       <svg class="icon_style">
         <use xmlns:xlink="http://www.w3.org/1999/xlink"
              :xlink:href="$route.path.indexOf('home') !== -1? '#homeActive' : '#home'"></use>
       </svg>
       <span>首页</span>
     </section>
-    <section @click="gotoAddress({path: `/search/${geohash}`})" class="guide_item">
+    <section @click="gotoAddress({path: `/search`})" class="guide_item">
       <svg class="icon_style">
         <use xmlns:xlink="http://www.w3.org/1999/xlink"
              :xlink:href="$route.path.indexOf('search') !== -1? '#findActive' : '#find'"></use>
@@ -176,7 +176,7 @@
       </svg>
       <span>我的</span>
     </section>
-  </section>
+  </footer>
 </template>
 
 <script>
