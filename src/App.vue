@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <transition name="router-fade" mode="out-in">
+    <transition name="" mode="out-in">
       <keep-alive v-if="$route.meta.keepAlive">
         <router-view></router-view>
       </keep-alive>

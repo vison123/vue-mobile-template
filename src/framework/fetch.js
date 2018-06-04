@@ -10,7 +10,7 @@ let fetcher = axios.create({
   }],
   headers: {
     'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json'
   },
   body: {
     'accessToken': ''

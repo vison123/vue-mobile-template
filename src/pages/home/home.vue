@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <head-top head-title="首页"></head-top>
-    <div class="category-list">
+    <div class="hello">
       <span>首页</span>
     </div>
     <foot-guide></foot-guide>
@@ -11,7 +11,6 @@
 <script>
 import footGuide from '@/components/footer/footGuide.vue'
 import headTop from '@/components/header/head'
-import BScroll from 'better-scroll'
 
 export default {
   name: 'HelloWorld',
@@ -21,15 +20,6 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      /* eslint-disable no-new */
-      new BScroll('.category-list', {
-        deceleration: 0.001,
-        bounce: true,
-        swipeTime: 1800,
-        click: true
-      })
-    })
   },
   components: {
     footGuide,
@@ -41,16 +31,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
   @import '../../assets/style/mixin.less';
-  .head-right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .wh(4rem, 100%)
-  }
-  .right-text{
-    .sc(0.6rem, #fff)
-  }
-  .category-list{
+  .hello {
+    text-align: center;
+    color: #2c3e50;
     margin-bottom: 1.95rem;
   }
 </style>
