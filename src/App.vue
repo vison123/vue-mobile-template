@@ -6,8 +6,11 @@
       </keep-alive>
       <div v-else>
         <head-top v-show="meta.showHeader" :head-title="meta.headTitle"></head-top>
-        <router-view v-bind:class="{ 'app-foot-menu': meta.showFootMenu }"></router-view>
+        <router-view class="router" v-bind:class="{ 'app-foot-menu': meta.showFootMenu }"></router-view>
         <foot-guide v-show="meta.showFootMenu"></foot-guide>
+        <div v-show="this.$store.getters.showLoading" class="cover" @touchmove.prevent @touchstart="hide($event)">
+          <loading class="loading"></loading>
+        </div>
       </div>
     </transition>
   </div>
@@ -16,16 +19,26 @@
 <script>
 import footGuide from '@/components/footer/footGuide.vue'
 import headTop from '@/components/header/head'
+import loading from '@/components/loading'
 
 export default {
   name: 'App',
   components: {
     footGuide,
-    headTop
+    headTop,
+    loading
+  },
+  mounted () {
+    console.log(this.$store)
   },
   computed: {
     meta () {
       return this.$route.meta
+    }
+  },
+  method: {
+    hide (e) {
+      e.returnValue = false
     }
   }
 }
@@ -42,6 +55,8 @@ export default {
   }
 
   .app{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -49,5 +64,27 @@ export default {
 
   .app-foot-menu{
     margin-bottom: 1.95rem;
+  }
+
+  .router {
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+  }
+
+  .cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
 </style>

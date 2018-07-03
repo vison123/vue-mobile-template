@@ -25,6 +25,10 @@ export default {
     }
   },
   mounted () {
+    this.$toast.show({
+      text: 'mounted',
+      position: 'bottom'
+    })
   },
   components: {
     footGuide,

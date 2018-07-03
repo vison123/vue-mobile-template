@@ -6,6 +6,9 @@ import router from './router'
 import './framework/rem'
 import FastClick from 'fastclick'
 import store from './store/index'
+import Toast from '@/components/toast'
+
+Vue.use(Toast)
 
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function () {

@@ -16,9 +16,9 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const env = process.env.NODE_ENV === 'testing'
-  ? require('../config/test.env')
-  : require('../config/prod.env')
+let env = require('../config/'+process.env.BUILD_ENV+'.env')
+
+console.log(env)
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -94,9 +94,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: process.env.NODE_ENV === 'testing'
-        ? 'index.html'
-        : config.build.index,
+      filename: config.build.index,
       template: 'index.html',
       inject: true,
       minify: {

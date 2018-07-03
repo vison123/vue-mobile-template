@@ -1,21 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import mutations from './mutations'
-import actions from './actions'
-import getters from './getters'
 import createLogger from 'vuex/dist/logger'
+import home from './modules/home'
+import global from './modules/global'
+import getters from './getters'
 
 Vue.use(Vuex)
 
-// state 中存放基础属性
-const state = {
-  test: ''
-}
-
 export default new Vuex.Store({
-  state,
+  modules: {
+    home,
+    global
+  },
   getters,
-  actions,
-  mutations,
   plugins: [createLogger()]
 })

@@ -11,7 +11,9 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build:test": "BUILD_ENV=test node build/build.js",
+    "build:pre": "BUILD_ENV=pre node build/build.js",
+    "build": "BUILD_ENV=prod node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
