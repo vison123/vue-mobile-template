@@ -1,10 +1,6 @@
 <template>
-  <div class="home">
-    <head-top head-title="我的"></head-top>
-    <div class="hello">
-      <span>我的</span>
-    </div>
-    <foot-guide></foot-guide>
+  <div class="hello">
+    <span>我的</span>
   </div>
 </template>
 
@@ -34,6 +30,5 @@ export default {
   .hello {
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 1.95rem;
   }
 </style>

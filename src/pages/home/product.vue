@@ -211,7 +211,7 @@ export default {
 
     }
     .pre-price {
-      font-size: 0.5rem;
+      font-size: 0.45rem;
       color: #999;
       display: flex;
       flex-direction: column-reverse;

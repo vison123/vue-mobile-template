@@ -90,7 +90,7 @@ export default [
     foodName: '喜力330瓶装啤酒 我就是喜力啤酒 世界排名第三的啤酒 不一样的啤酒',
     storeName: 'E点便利（上海市 普陀区 真北路 1009号 天怡美便利店 24小时营业）',
     dailyStock: 20,
-    promotionStock: 3,
+    promotionStock: 8,
     stockStatus: 1,
     areaAgentFee: 3, // 起送价
     deliveryPrice: 5,
@@ -104,7 +104,7 @@ export default [
     foodName: '喜力330瓶装啤酒 我就是喜力啤酒 世界排名第三的啤酒 不一样的啤酒',
     storeName: 'E点便利（上海市 普陀区 真北路 1009号 天怡美便利店 24小时营业）',
     dailyStock: 20,
-    promotionStock: 3,
+    promotionStock: 5,
     stockStatus: 1,
     areaAgentFee: 3, // 起送价
     deliveryPrice: 5,

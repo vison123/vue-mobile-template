@@ -45,7 +45,7 @@ export default {
       width: 0.55rem;
     }
     .head-center{
-      position: absolute;
+      position: relative;
       top: 0;
       left: 50%;
       max-width: 50%;

@@ -13,26 +13,31 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { showFootMenu: true, selectedMenu: 'Home', showHeader: true, headTitle: '首页', showGoBack: false }
     // meta: {
     //   keepAlive: true // 需要被缓存
     // }
   }, {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { showFootMenu: true, selectedMenu: 'Home', showHeader: true, headTitle: '首页', showGoBack: false }
   }, {
     path: '/search',
     name: 'Search',
-    component: Search
+    component: Search,
+    meta: { showFootMenu: true, selectedMenu: 'Search', showHeader: true, headTitle: '搜索', showGoBack: false }
   }, {
     path: '/order',
     name: 'Order',
-    component: Order
+    component: Order,
+    meta: { showFootMenu: true, selectedMenu: 'Order', showHeader: true, headTitle: '订单', showGoBack: false }
   }, {
     path: '/profile',
     name: 'Profile',
-    component: Profile
+    component: Profile,
+    meta: { showFootMenu: true, selectedMenu: 'Profile', showHeader: true, headTitle: '我的', showGoBack: false }
   }
 ]
 
