@@ -15,6 +15,7 @@ import footGuide from '@/components/footer/footGuide.vue'
 import headTop from '@/components/header/head'
 import Product from './product.vue'
 import productData from './data'
+import { Toast } from 'mint-ui'
 
 export default {
   name: 'HelloWorld',
@@ -25,9 +26,10 @@ export default {
     }
   },
   mounted () {
-    this.$toast.show({
-      text: 'mounted',
-      position: 'bottom'
+    Toast({
+      message: 'Upload Complete',
+      position: 'bottom',
+      duration: 5000
     })
   },
   components: {

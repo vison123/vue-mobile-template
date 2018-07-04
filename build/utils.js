@@ -33,6 +33,14 @@ exports.cssLoaders = function (options) {
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
+    loaders.push({
+      loader: 'px2rem-loader',
+      options: {
+        remUnit: 23.4375,
+        remPrecision: 3
+      }
+    })
+
     if (loader) {
       loaders.push({
         loader: loader + '-loader',

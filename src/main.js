@@ -6,9 +6,10 @@ import router from './router'
 import './framework/rem'
 import FastClick from 'fastclick'
 import store from './store/index'
-import Toast from '@/components/toast'
+import { Toast, Button } from 'mint-ui'
 
-Vue.use(Toast)
+Vue.component(Toast.name, Toast)
+Vue.component(Button.name, Button)
 
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function () {
