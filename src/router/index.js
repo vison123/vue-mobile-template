@@ -15,9 +15,6 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: { showFootMenu: true, selectedMenu: 'Home', showHeader: true, headTitle: '首页', showGoBack: false }
-    // meta: {
-    //   keepAlive: true // 需要被缓存
-    // }
   }, {
     path: '/home',
     name: 'Home',

@@ -8,9 +8,18 @@ import FastClick from 'fastclick'
 import store from './store/index'
 import { Toast, Button } from 'mint-ui'
 
+// 开发环境mock数据
 if (process.env.NODE_ENV === 'development') {
   require('./mock')
 }
+
+/* 路由发生变化修改页面title */
+router.beforeEach((to, from, next) => {
+  if (to.meta.headTitle) {
+    document.title = to.meta.headTitle
+  }
+  next()
+})
 
 Vue.component(Toast.name, Toast)
 Vue.component(Button.name, Button)
