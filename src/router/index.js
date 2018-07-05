@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import { routerMode } from '../framework/env'
 
 const Home = () => import(/* webpackChunkName: "home" */'@/pages/home/home')
-const Message = () => import(/* webpackChunkName: "search" */'@/pages/search/search')
-const Cart = () => import(/* webpackChunkName: "order" */'@/pages/order/order')
+const Message = () => import(/* webpackChunkName: "search" */'@/pages/message/message')
+const Cart = () => import(/* webpackChunkName: "order" */'@/pages/cart/cart')
 const Profile = () => import(/* webpackChunkName: "profile" */'@/pages/profile/profile')
 
 Vue.use(Router)

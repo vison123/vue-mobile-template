@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <span>购物车</span>
+    <span>消息</span>
   </div>
 </template>
 

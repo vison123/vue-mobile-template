@@ -1,7 +1,7 @@
 <template>
   <div>
     <Product
-      v-for="product in productLists"
+      v-for="product in homeGoodsData"
       :key="product.foodId"
       class="product"
       :product="product"
@@ -11,31 +11,33 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import footGuide from '@/components/footer/footGuide.vue'
 import headTop from '@/components/header/head'
 import Product from './product.vue'
-import productData from './data'
-import { Toast } from 'mint-ui'
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      productLists: productData
+      msg: 'Welcome to Your Vue.js App'
     }
   },
+  computed: {
+    ...mapGetters([
+      'homeGoodsData'
+    ])
+  },
   mounted () {
-    Toast({
-      message: 'Upload Complete',
-      position: 'bottom',
-      duration: 5000
-    })
+    this.getGoods()
   },
   components: {
     footGuide,
     headTop,
     Product
+  },
+  methods: {
+    ...mapActions(['getGoods'])
   }
 }
 </script>

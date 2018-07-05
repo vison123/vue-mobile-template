@@ -8,6 +8,10 @@ import FastClick from 'fastclick'
 import store from './store/index'
 import { Toast, Button } from 'mint-ui'
 
+if (process.env.NODE_ENV === 'development') {
+  require('./mock')
+}
+
 Vue.component(Toast.name, Toast)
 Vue.component(Button.name, Button)
 

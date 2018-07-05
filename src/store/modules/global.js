@@ -1,6 +1,4 @@
-// mutation-types
-// const SHOW_TOAST = 'SHOW_TOAST'
-const SHOW_LOADING = 'SHOW_LOADING'
+import { SHOW_LOADING } from '../mutation-types'
 
 const initialState = {
   accessToken: '',
@@ -13,7 +11,7 @@ const home = {
   // 必须同步执行
   mutations: {
     [SHOW_LOADING]: (state, payload) => {
-      state.global.showLoading = payload
+      state.showLoading = payload
     }
   },
   // 处理异步请求
