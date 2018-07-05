@@ -5,19 +5,19 @@
       <img v-else class="icon_style" src="../../assets/svg/home_fill.svg"/>
       <span>首页</span>
     </section>
-    <section @click="gotoAddress({path: `/search`})" class="guide_item">
-      <img v-if="$route.meta.selectedMenu !== 'Search'" class="icon_style" src="../../assets/svg/search.svg"/>
-      <img v-else class="icon_style" src="../../assets/svg/search_fill.svg"/>
-      <span>搜索</span>
+    <section @click="gotoAddress({path: `/message`})" class="guide_item">
+      <img v-if="$route.meta.selectedMenu !== 'Message'" class="icon_style" src="../../assets/svg/message.svg"/>
+      <img v-else class="icon_style" src="../../assets/svg/message_fill.svg"/>
+      <span>消息</span>
     </section>
-    <section @click="gotoAddress('/order')" class="guide_item">
-      <img v-if="$route.meta.selectedMenu !== 'Order'" class="icon_style" src="../../assets/svg/order.svg"/>
-      <img v-else class="icon_style" src="../../assets/svg/order_fill.svg"/>
-      <span>订单</span>
+    <section @click="gotoAddress('/cart')" class="guide_item">
+      <img v-if="$route.meta.selectedMenu !== 'Cart'" class="icon_style" src="../../assets/svg/cart.svg"/>
+      <img v-else class="icon_style" src="../../assets/svg/cart_fill.svg"/>
+      <span>购物车</span>
     </section>
     <section @click="gotoAddress('/profile')" class="guide_item">
-      <img v-if="$route.meta.selectedMenu !== 'Profile'" class="icon_style" src="../../assets/svg/people.svg"/>
-      <img v-else class="icon_style" src="../../assets/svg/people_fill.svg"/>
+      <img v-if="$route.meta.selectedMenu !== 'Profile'" class="icon_style" src="../../assets/svg/my.svg"/>
+      <img v-else class="icon_style" src="../../assets/svg/my_fill.svg"/>
       <span>我的</span>
     </section>
   </footer>

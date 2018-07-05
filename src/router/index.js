@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import { routerMode } from '../framework/env'
 
 const Home = () => import(/* webpackChunkName: "home" */'@/pages/home/home')
-const Search = () => import(/* webpackChunkName: "search" */'@/pages/search/search')
-const Order = () => import(/* webpackChunkName: "order" */'@/pages/order/order')
+const Message = () => import(/* webpackChunkName: "search" */'@/pages/search/search')
+const Cart = () => import(/* webpackChunkName: "order" */'@/pages/order/order')
 const Profile = () => import(/* webpackChunkName: "profile" */'@/pages/profile/profile')
 
 Vue.use(Router)
@@ -24,15 +24,15 @@ const routes = [
     component: Home,
     meta: { showFootMenu: true, selectedMenu: 'Home', showHeader: true, headTitle: '首页', showGoBack: false }
   }, {
-    path: '/search',
-    name: 'Search',
-    component: Search,
-    meta: { showFootMenu: true, selectedMenu: 'Search', showHeader: true, headTitle: '搜索', showGoBack: false }
+    path: '/message',
+    name: 'Message',
+    component: Message,
+    meta: { showFootMenu: true, selectedMenu: 'Message', showHeader: true, headTitle: '消息', showGoBack: false }
   }, {
-    path: '/order',
-    name: 'Order',
-    component: Order,
-    meta: { showFootMenu: true, selectedMenu: 'Order', showHeader: true, headTitle: '订单', showGoBack: false }
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
+    meta: { showFootMenu: true, selectedMenu: 'Cart', showHeader: true, headTitle: '购物车', showGoBack: false }
   }, {
     path: '/profile',
     name: 'Profile',
