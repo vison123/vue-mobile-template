@@ -72,7 +72,7 @@ export default {
       flex-direction: column;
       align-items: center;
       .icon_style {
-        .wh(0.9rem, 0.9rem);
+        .wh(1rem, 1rem);
         margin-top: .3rem;
         fill: #ccc;
       }
